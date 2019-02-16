@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    position: absolute;
+    background-color: bisque;
+    width: 60%;
+    height: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    display: flex;
+}
+
+.table {
+    position: relative;
+    background-color: darkgrey;
+    width: 50%;
+    height: 100%;
+}
+
+.admin_form {
+    width: 50%;
+    height: 100%;
+    background-color: dimgray;
+}
+
+.customer_info_wrapper {
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    padding-top: 20px;
+}
+.customers {
+    margin-top: 100px;
+}
+
+/* login form for admin access */
+
+.login_wrapper {
+    position: absolute;
+    width: 195px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login_label {
+    font-weight: bolder;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, 0%);
+    color: rgba(0,0,0, 0.5);
+    font-size: 40px;
+}
+.table_label {
+    font-weight: bolder;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, 0%);
+    color: rgba(0,0,0, 0.5);
+    font-size: 40px;
+}
+
+.admin_form {
+position: relative;
+}
+
+.btn_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn_submit {
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    border: solid white 1px;
+    background-color: inherit;
+    color: white;
+    cursor: pointer;
+}
+
+.btn_facebook {
+    border-color: 	#3b5998;
+    color: 	azure;
+    background-color: #3b5998;
+}
+
+.menu_wrapper {
+    margin-top: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.customer_first_name, .customer_last_name, .customer_phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.customer_first_name input, .customer_last_name input, .customer_phone input {
+    margin: 0;
+}
+
+.customer_first_name > p, .customer_last_name > p, .customer_phone > p {
+    color: white;
+    font-size: 20px;
+}
+
+button:focus {
+    outline: none;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns > button {
+    width: 80px;
+    padding:5px;
+    border: solid 1px white;
+    color: white;
+    border-radius: 10px;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+input {
+     width: 175px;
+    border: none;
+    padding: 8px 10px;
+    margin-top: 15px;
+    border-radius: 10px;
+    /*margin-bottom: 5px;*/
+}
+
+input:focus {
+    outline: none;
+}
