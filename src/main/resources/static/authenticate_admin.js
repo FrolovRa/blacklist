@@ -10,7 +10,6 @@ function login() {
         success: function(res){
             console.log(res);
             if (JSON.parse(res).status) {
-                console.log("ok");
                 window.location = "/admin"
             } else {
                 badCredentials()

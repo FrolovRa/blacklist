@@ -7,9 +7,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import repository.CustomerRepository;
 
 import javax.annotation.Resource;
 
@@ -20,8 +22,8 @@ public class MainController {
     @Resource
     private AuthenticationManager authManager;
 
-    private String user = "admin";
-    private String pass = "root";
+    @Resource
+    private CustomerRepository repository;
 
     @GetMapping("/login")
     @ResponseBody
@@ -40,7 +42,14 @@ public class MainController {
     }
 
     @GetMapping("/admin")
-    public String admin() {
+    public String admin(Model model) {
+        model.addAttribute("list", repository.findAll());
         return "admin";
+    }
+
+    @GetMapping("/")
+    public String index(Model model) {
+        model.addAttribute("list", repository.findAll());
+        return "index";
     }
 }

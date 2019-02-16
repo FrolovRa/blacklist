@@ -32,6 +32,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
         http
             .authorizeRequests().antMatchers("/admin").authenticated()
             .and()
-            .authorizeRequests().anyRequest().permitAll();
+            .authorizeRequests().anyRequest().permitAll()
+            .and().csrf().disable();
     }
 }

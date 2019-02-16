@@ -1,0 +1,9 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="customer_name">
+        <span class="first_name" th:text="${customer.firstName} + ' '"></span>
+        <span class="last_name" th:text="${customer.lastName}"></span>
+    </div>
+    <div class="customer_phone" >
+        <p class="phone" th:text="${customer.phoneNumber}"></p>
+    </div>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" type="text/css" href="/main.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
@@ -10,37 +10,17 @@
 <body>
 <div class="wrapper">
     <div class="table">
-        <div class="customer_info_wrapper">
+        <div class="table_label">Blacklist</div>
+        <div class="customers">
+        <div class="customer_info_wrapper" th:each="user : ${list}" th:attr="data-id=${user.id}"  >
             <div class="customer_name">
-                <p>Tom Berton</p>
+                <span class="first_name" th:text="${user.firstName} + ' '"></span>
+                <span class="last_name" th:text="${user.lastName}"></span>
             </div>
-            <div class="customer_phone">
-                <p>(059) 384 34 61</p>
+            <div class="customer_phone" >
+                <p class="phone" th:text="${user.phoneNumber}"></p>
             </div>
         </div>
-        <div class="customer_info_wrapper">
-            <div class="customer_name">
-                <p>Tom Berton</p>
-            </div>
-            <div class="customer_phone">
-                <p>(059) 384 34 61</p>
-            </div>
-        </div>
-        <div class="customer_info_wrapper">
-            <div class="customer_name">
-                <p>Tom Berton</p>
-            </div>
-            <div class="customer_phone">
-                <p>(059) 384 34 61</p>
-            </div>
-        </div>
-        <div class="customer_info_wrapper">
-            <div class="customer_name">
-                <p>Tom Berton</p>
-            </div>
-            <div class="customer_phone">
-                <p>(059) 384 34 61</p>
-            </div>
         </div>
     </div>
     <div class="admin_form">

@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="customer_info_wrapper" data-id="" th:each="user : ${list}" th:attr="data-id=${user.id}" >
+    <div class="customer_name">
+        <span class="first_name" th:text="${user.firstName} + ' '"></span>
+        <span class="last_name" th:text="${user.lastName}"></span>
+    </div>
+    <div class="customer_phone" >
+        <p class="phone" th:text="${user.phoneNumber}"></p>
+    </div>
+</div>
+</html>
