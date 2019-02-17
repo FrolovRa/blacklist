@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import repository.CustomerRepository;
 
 import javax.annotation.Resource;
-import java.util.Optional;
 
 @Controller
 public class CrudController {

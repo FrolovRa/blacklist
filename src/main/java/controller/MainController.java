@@ -48,6 +48,13 @@ public class MainController {
     }
 
     @GetMapping("/")
+    public String home(Model model) {
+        model.addAttribute("list", repository.findAll());
+        return "admin";
+    }
+
+
+    @GetMapping("/blacklist")
     public String index(Model model) {
         model.addAttribute("list", repository.findAll());
         return "index";
