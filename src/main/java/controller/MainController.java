@@ -16,7 +16,7 @@ import repository.CustomerRepository;
 import javax.annotation.Resource;
 
 @Controller
-@ComponentScan("application")
+@ComponentScan("security")
 public class MainController {
 
     @Resource
