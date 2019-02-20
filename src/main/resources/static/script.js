@@ -28,6 +28,11 @@ function add() {
         cache: false,
         success: function(res){
             $(".customers").append(res)
+        },
+        complete: function (err, tx) {
+            if (err.status === 204) {
+                console.log("fill all")
+            }
         }
     });
 }

@@ -13,17 +13,18 @@ configurations {
         extendsFrom developmentOnly
     }
 }
+
 dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'war'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group 'Black'
-version '0.2'
 
 sourceCompatibility = 1.8
 
@@ -34,14 +35,13 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-web")
-
     compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.1.2.RELEASE'
     compile group: 'org.springframework.security', name: 'spring-security-config', version: '5.1.1.RELEASE'
     compile group: 'org.springframework.security', name: 'spring-security-web', version: '5.1.1.RELEASE'
     compile group: 'org.springframework.security.oauth.boot', name: 'spring-security-oauth2-autoconfigure', version: '2.1.0.RELEASE'
-
     compile("com.h2database:h2")
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 //    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
-    testCompile("junit:junit")
+//    testCompile("junit:junit")
 }

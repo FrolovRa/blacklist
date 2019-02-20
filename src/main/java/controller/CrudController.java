@@ -2,15 +2,15 @@ package controller;
 
 import model.Customer;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 import repository.CustomerRepository;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Controller
 public class CrudController {
@@ -23,12 +23,19 @@ public class CrudController {
             @RequestParam("first") String first,
             @RequestParam("last") String last,
             @RequestParam("phone") String phone,
-            Model model
-    ) {
-        Customer customer = new Customer(first, last, phone);
-        Customer dbCustomer = repository.save(customer);
-        model.addAttribute("customer", dbCustomer);
-        return "customer";
+            Model model,
+            HttpServletResponse response
+    ) throws IOException {
+        if(!first.isEmpty() && !last.isEmpty() && !phone.isEmpty()){
+            Customer customer = new Customer(first, last, phone);
+            Customer dbCustomer = repository.save(customer);
+            model.addAttribute("customer", dbCustomer);
+            return "customer";
+        }
+        else {
+            response.sendError(HttpServletResponse.SC_NO_CONTENT);
+            return null;
+        }
     }
 
     @GetMapping("/remove")
