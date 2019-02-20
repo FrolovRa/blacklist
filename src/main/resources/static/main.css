@@ -81,6 +81,17 @@
     color: rgba(0,0,0, 0.5);
     font-size: 40px;
 }
+
+#logout {
+    font-weight: bolder;
+    position: absolute;
+    left: 50%;
+    top: 12%;
+    transform: translate(-50%, 0%);
+    color: rgba(0,0,0, 0.5);
+    font-size: 20px;
+}
+
 .logo {
     flex: 100%;
     font-weight: bolder;

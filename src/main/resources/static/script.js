@@ -29,12 +29,22 @@ function add() {
         success: function(res){
             $(".customers").append(res)
         },
-        complete: function (err, tx) {
+        complete: function (err) {
             if (err.status === 204) {
-                console.log("fill all")
+                badInput();
+            } else {
+                $("#first_name_input, #last_name_input, #phone_input").removeAttr("style");
             }
         }
     });
+}
+
+function badInput() {
+    $("#first_name_input, #last_name_input, #phone_input").css({
+        "-webkit-box-shadow": "-1px 3px 43px -8px rgba(242,72,72,0.72)",
+        "-moz-box-shadow": "-1px 3px 43px -8px rgba(242,72,72,0.72)",
+        "box-shadow": "-1px 3px 43px -8px rgba(242,72,72,0.72)"
+    })
 }
 
 function remove() {

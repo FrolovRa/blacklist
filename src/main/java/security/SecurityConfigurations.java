@@ -52,6 +52,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatcher("/**").authorizeRequests()
                 .antMatchers("/admin","/").authenticated()
                 .anyRequest().permitAll()
+                .and().logout().logoutSuccessUrl("/").deleteCookies("JSESSIONID")
                 .and().exceptionHandling()
                 .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/blacklist"))
                 .and().addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class)
