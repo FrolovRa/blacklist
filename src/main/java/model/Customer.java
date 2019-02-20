@@ -61,7 +61,8 @@ public class Customer {
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+
+        return " (" + phoneNumber.substring(0,3) + ") " + phoneNumber.substring(3,6) + "-" + phoneNumber.substring(6,8) + "-" + phoneNumber.substring(8) ;
     }
 
     public void setPhoneNumber(String phoneNumber) {

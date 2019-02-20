@@ -25,7 +25,7 @@ public class CrudController {
             Model model,
             HttpServletResponse response
     ) throws IOException {
-        if(!first.isEmpty() && !last.isEmpty() && !phone.isEmpty()){
+        if(!first.isEmpty() && !last.isEmpty() && !(phone.length() < 10)){
             Customer customer = new Customer(first, last, phone);
             Customer dbCustomer = repository.save(customer);
             model.addAttribute("customer", dbCustomer);

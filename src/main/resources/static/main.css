@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+/*html {*/
+    /*background-color: #1f2023;*/
+/*}*/
+
 .wrapper {
     position: absolute;
     background-color: bisque;
@@ -16,6 +20,7 @@
 
 .table {
     background-color: darkgrey;
+    /*background-color: rgb(47, 52, 62);*/
     width: 50%;
 }
 
@@ -44,6 +49,7 @@
     width: 50%;
     height: 100%;
     background-color: dimgray;
+    /*background-color: rgb(52, 62, 77);*/
 }
 
 .customer_info_wrapper {
@@ -139,11 +145,21 @@ position: relative;
     margin-bottom: 20px;
 }
 
+.customer_phone h4 {
+    color: whitesmoke;
+    margin-right: 10px;
+}
+
+.phone_input_wrapper {
+    display: flex;
+    align-items: center;
+}
+
 .customer_first_name input, .customer_last_name input, .customer_phone input {
     margin: 0;
 }
 
-.customer_first_name > p, .customer_last_name > p, .customer_phone > p {
+.customer_first_name > p, .customer_last_name > p, .customer_phone > p, span {
     color: white;
     font-size: 20px;
 }

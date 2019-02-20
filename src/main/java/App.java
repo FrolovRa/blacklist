@@ -38,7 +38,8 @@ public class App extends SpringBootServletInitializer {
             repository.save(new Customer("Chloe", "O'Brian", "1235351227"));
             repository.save(new Customer("Kim", "Bauer", "1235316612"));
             repository.save(new Customer("David", "Palmer", "1345138754"));
-            repository.save(new Customer("Michelle", "Dessler", "1473618614"));
+            repository.save(new Customer("Test", "Test", "3809230405"));
+            repository.save(new Customer("Firstname", "Lastname", "3802231121"));
 
         };
     }

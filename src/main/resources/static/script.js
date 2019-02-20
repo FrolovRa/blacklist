@@ -13,7 +13,7 @@ $(document)
 
     $("#first_name_input").val(checked.find(".first_name").html());
     $("#last_name_input").val(checked.find(".last_name").html());
-    $("#phone_input").val(checked.find(".phone").html())
+    $("#phone_input").val(checked.find(".phone").html().replace(/\D/g, ""));
 });
 
 function add() {
@@ -80,5 +80,27 @@ function change() {
         }
     });
 }
+
+
+// Restricts input for the given textbox to the given inputFilter.
+function setInputFilter(textbox, inputFilter) {
+    ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+        textbox.addEventListener(event, function() {
+            if (inputFilter(this.value)) {
+                this.oldValue = this.value;
+                this.oldSelectionStart = this.selectionStart;
+                this.oldSelectionEnd = this.selectionEnd;
+            } else if (this.hasOwnProperty("oldValue")) {
+                this.value = this.oldValue;
+                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            }
+        });
+    });
+}
+
+$(document).ready(function(){
+    setInputFilter(document.getElementById("phone_input"), function(value) {
+        return /^\d*$/.test(value); });
+});
 
 

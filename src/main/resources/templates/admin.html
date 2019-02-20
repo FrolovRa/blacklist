@@ -26,7 +26,8 @@
                     <span class="last_name" th:text="${user.lastName}"></span>
                 </div>
                 <div class="customer_phone" >
-                    <p class="phone" th:text="${user.phoneNumber}"></p>
+                    <span>+ 38 </span>
+                    <span class="phone" th:text="${user.phoneNumber}"></span>
                 </div>
             </div>
         </div>
@@ -45,8 +46,11 @@
                 <input id="last_name_input" autocomplete="off" type="text" maxlength="15" placeholder="Last name">
             </div>
             <div class="customer_phone">
-                 <p>Phone</p>
-                <input id="phone_input" autocomplete="off" type="tel" maxlength="10" placeholder="Phone number">
+                <p>Phone</p>
+                <div class="phone_input_wrapper">
+                    <h4>+ 38</h4>
+                    <input id="phone_input" maxlength="10" autocomplete="off" placeholder="Phone number">
+                </div>
             </div>
             <div class="btns">
                 <button class="add_customer" onclick="add()">
