@@ -53,7 +53,6 @@ public class MainController {
         return "admin";
     }
 
-
     @GetMapping("/blacklist")
     public String index(Model model) {
         model.addAttribute("list", repository.findAll());

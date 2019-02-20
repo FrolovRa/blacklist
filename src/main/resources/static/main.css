@@ -15,10 +15,29 @@
 }
 
 .table {
-    position: relative;
     background-color: darkgrey;
     width: 50%;
-    height: 100%;
+}
+
+.table_label {
+    height: 16%;
+    display: flex;
+    /*height: 120px;*/
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.logo h4 {
+    text-align: center;
+}
+
+.columns_labels {
+    color: rgba(0,0,0, 0.5);
+    display: flex;
+    flex:1;
+    justify-content: space-between;
+    padding-right: 50px;
+    padding-left: 80px;
 }
 
 .admin_form {
@@ -30,12 +49,17 @@
 .customer_info_wrapper {
     display: flex;
     color: white;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-size: 1.5em;
+    padding-right: 50px;
+    padding-left: 50px;
     padding-top: 20px;
 }
 .customers {
-    margin-top: 100px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 80%;
+    overflow: scroll;
 }
 
 /* login form for admin access */
@@ -57,12 +81,9 @@
     color: rgba(0,0,0, 0.5);
     font-size: 40px;
 }
-.table_label {
+.logo {
+    flex: 100%;
     font-weight: bolder;
-    position: absolute;
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%, 0%);
     color: rgba(0,0,0, 0.5);
     font-size: 40px;
 }
@@ -93,9 +114,11 @@ position: relative;
 }
 
 .menu_wrapper {
-    margin-top: 100px;
-    margin-left: 40px;
-    margin-right: 40px;
+    width:70%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
 }
 
 .customer_first_name, .customer_last_name, .customer_phone {
@@ -152,7 +175,10 @@ input:focus {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

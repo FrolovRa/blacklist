@@ -11,7 +11,14 @@
 <body>
 <div class="wrapper">
     <div class="table">
-        <div class="table_label">Blacklist</div>
+        <div class="table_label">
+            <div class="logo">
+                <h4>Blacklist</h4>
+            </div>
+            <div class="columns_labels">
+                <h4>Name</h4><h4>Phone number</h4>
+            </div>
+        </div>
         <div class="customers">
             <div class="customer_info_wrapper" th:each="user : ${list}" th:attr="data-id=${user.id}">
                 <div class="customer_name">
@@ -37,7 +44,7 @@
             </div>
             <div class="customer_phone">
                  <p>Phone</p>
-                <input id="phone_input" autocomplete="off" type="number" maxlength="10" placeholder="Phone number">
+                <input id="phone_input" autocomplete="off" type="tel" maxlength="10" placeholder="Phone number">
             </div>
             <div class="btns">
                 <button class="add_customer" onclick="add()">
